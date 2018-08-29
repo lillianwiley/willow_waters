@@ -1,0 +1,10 @@
+.Header {
+  text-align: center;
+}
+
+.Nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+
+}
