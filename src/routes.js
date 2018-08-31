@@ -7,6 +7,9 @@ import Blog from './components/Blog/Blog';
 import About from './components/About/About';
 import Private from './components/Login/Private/Private';
 import Login from './components/Login/Login';
+import ProductsDisplay from './components/ProductsDisplay/ProductsDisplay';
+import Portfolio from './components/Portfolio/Portfolio';
+import Contact from './components/Contact/Contact';
 
 export default (
     <Switch>
@@ -16,5 +19,9 @@ export default (
         <Route path='/about' component={About} />
         <Route path='/private' component={Private} />
         <Route path='/login' component={Login} />
+        <Route path='/charcoal' component={Login} />
+        <Route path='/products/:category' component={ProductsDisplay} />
+        <Route path='/portfolio' component={Portfolio} />
+        <Route path='/contact' component={Contact} />
     </Switch>
 )

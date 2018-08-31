@@ -8,6 +8,8 @@ const express = require('express')
 
 const app = express();
 
+const controller = require('./controller');
+
 const {
     SERVER_PORT,
     SECRET,
@@ -72,6 +74,10 @@ app.get('/auth/logout', (req, res) => {
     req.session.destroy();
     res.redirect('http://localhost:3000/');
 })
+
+app.get('/api/products', controller.getAllProducts);
+app.get('/api/products/:c_id', controller.getAllFromCategory);
+app.post('/api/products/:product_id', controller.addToCart);
 
 app.listen(SERVER_PORT, () => {
     console.log(`willow waters on port ${SERVER_PORT}`)

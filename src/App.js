@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import Home from './components/Home/Home';
 import routes from './routes';
-import './App.css';
+import Header from './components/Header/Header';
 
 class App extends Component {
   render() {
     return (
-      <div>
-        {routes}
-      </div>
+        <div>
+          <Header />
+          {routes}
+        </div>
     );
   }
 }
