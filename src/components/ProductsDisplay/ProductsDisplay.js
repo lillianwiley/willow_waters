@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import {addToCart} from '../../ducks/reducer';
+import { updateCart } from '../../ducks/reducer';
 
 
-class ProductDisplay extends Component{
-    constructor(){
+class ProductDisplay extends Component {
+    constructor() {
         super();
 
         this.state = {
@@ -13,8 +13,8 @@ class ProductDisplay extends Component{
         }
     }
 
-    componentDidMount(){
-        const {category} = this.props.match.params //this.props.match.params is pulling the paramater of the url - products/3 3 is the param
+    componentDidMount() {
+        const { category } = this.props.match.params
         axios.get(`/api/products/${category}`)
             .then(res => {
                 this.setState({
@@ -23,25 +23,34 @@ class ProductDisplay extends Component{
             })
     }
 
+    addToCart(productId) {
+        // first get product
+        console.log(productId)
+        // axios
+        axios.post(`/api/products/${productId}`)
+        .then(res => {
+            console.log(res.data)
+            this.props.updateCart(res.data)
+        })
+        .catch((error) => console.log('erra erra error', error))
+    }
 
-
-
-    render(){
-        const {filteredProducts} = this.state;
-        let displayMe = filteredProducts.map((eachOne,i)=>{
-            console.log(eachOne.product_id)
-            return(
+    render() {
+        console.log(this.props.cart)
+        const { filteredProducts } = this.state;
+        let displayMe = filteredProducts.map((eachOne, i) => {
+            return (
                 <div key={i} >
 
-                <h1>{eachOne.title}</h1>
-                <p>{eachOne.description}</p>
-                <h3>{eachOne.price}</h3>
-                <button onClick={() => this.props.addToCart(eachOne.product_id)}>Add to cart</button>
+                    <h1>{eachOne.title}</h1>
+                    <p>{eachOne.description}</p>
+                    <h3>{eachOne.price}</h3>
+                    <button onClick={() => this.addToCart(eachOne.product_id)}>Add to cart</button>
 
-            </div>
+                </div>
             )
         })
-        return(
+        return (
             <div>
                 {displayMe}
             </div>
@@ -50,5 +59,10 @@ class ProductDisplay extends Component{
 
 }
 
-export default connect(null, {addToCart})(ProductDisplay);
+function mapStateToProps(state) {
+    return {
+        cart: state.cart
+    }
+}
 
+export default connect(mapStateToProps, { updateCart })(ProductDisplay);

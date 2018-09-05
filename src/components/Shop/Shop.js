@@ -61,9 +61,9 @@ export default class Shop extends Component {
   render() {
     const {categoryOptions} = this.state
 
-    let mappedCategories = categoryOptions.map(category => {
+    let mappedCategories = categoryOptions.map((category,i) => {
       return (
-        <CategoryTiles category={category}/>
+        <CategoryTiles key={i} category={category}/>
       )
     })
 

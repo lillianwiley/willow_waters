@@ -1,0 +1,14 @@
+.about-container{
+    max-width: 100%;
+    margin: 0 auto;
+    background: white;
+    font-size: 24px;
+    padding: 60px;
+}
+
+.first-image{
+    padding: 100px 35px;
+    background-image: url('../../photos/tree-tunnel.jpg');
+    background-repeat: no-repeat;
+    background-size: 60vh;
+}

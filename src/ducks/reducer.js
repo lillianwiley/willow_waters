@@ -15,13 +15,11 @@ export function updateUser(userObj) {
     }
 }
 
-export function addToCart(product_id) {
-    console.log(product_id)
-    axios.post(`/api/products/${product_id}`)
-  return {
-      type: ADD_TO_CART,
-      payload: []
-  }
+export function updateCart(updatedCart) {
+    return {
+        type: ADD_TO_CART,
+        payload: updatedCart
+    }
 }
 
 
@@ -29,9 +27,9 @@ export function addToCart(product_id) {
 export default function reducer(state = initialState, action) {
     switch (action.type) {
         case UPDATE_USER:
-            return Object.assign({}, state, {user: action.payload})
+            return Object.assign({}, state, { user: action.payload })
         case ADD_TO_CART:
-            return Object.assign({}, state, {cart: action.payload})
+            return Object.assign({}, state, { cart: action.payload })
         default: return state;
     }
 }

@@ -16,8 +16,21 @@ const {
     REACT_APP_CLIENT_ID,
     REACT_APP_DOMAIN,
     CLIENT_SECRET,
-    CONNECTION_STRING
+    CONNECTION_STRING,
+    NODE_ENV,
+    AUTH_ID,
+    STRIPE_SECRET_KEY
+    
 } = process.env;
+
+var stripe = require("stripe")(STRIPE_SECRET_KEY);
+
+const charge = stripe.charges.create({
+  amount: 999,
+  currency: 'usd',
+  source: 'tok_visa',
+  receipt_email: 'jenny.rosen@example.com',
+});
 
 massive(CONNECTION_STRING).then(db => {
     app.set('db', db);
@@ -49,7 +62,8 @@ app.get('/auth/callback', async (req, res) => {
         picture,
         sub
     } = resWithUserData.data;
-    console.log(resWithUserData)
+    //console.log(resWithUserData)
+    
     let db = req.app.get('db');
     let foundUser = await db.find_user([sub])
     if (foundUser[0]) {
@@ -62,7 +76,19 @@ app.get('/auth/callback', async (req, res) => {
     }
 })
 
-app.get('/api/user-data', (req, res) => {
+function envCheck(req, res, next) {
+    if (NODE_ENV === 'dev') {
+        req.app.get('db').find_user([AUTH_ID]).then(userWithIdOne => {
+            req.session.user = userWithIdOne[0]
+            next();
+        })
+    } else {
+        next()
+    }
+}
+
+app.get('/api/user-data', envCheck, (req, res) => {
+    console.log('user data')
     if(req.session.user) {
         res.status(200).send(req.session.user);
     } else {
@@ -77,7 +103,13 @@ app.get('/auth/logout', (req, res) => {
 
 app.get('/api/products', controller.getAllProducts);
 app.get('/api/products/:c_id', controller.getAllFromCategory);
-app.post('/api/products/:product_id', controller.addToCart);
+app.get('/api/cart', envCheck, controller.getCart);
+
+app.post('/api/products/:product_id', envCheck, controller.addToCart);
+
+app.put('/api/cart/:product_id/:quantity', envCheck, controller.changeCartQuantity);
+
+app.delete('/api/cart/:product_id', envCheck, controller.deleteCart);
 
 app.listen(SERVER_PORT, () => {
     console.log(`willow waters on port ${SERVER_PORT}`)

@@ -1,0 +1,20 @@
+.container{
+    max-width: 100%;
+    margin: 0 auto;
+    background: #f9f9f9;
+    font-size: 24px;
+    padding: 25px;
+}
+.parallax {
+    padding: 100px 35px;
+    background: transparent;
+    background-image: url('../../photos/kwiley-rock.jpg'), url('../../photos/watercolor-pallet.jpg');
+    background-repeat: no-repeat;
+    background-size: 60vh;
+}
+
+.info{
+    z-index: 3;
+    position: relative;
+    color: maroon;
+}

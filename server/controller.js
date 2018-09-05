@@ -15,14 +15,20 @@ module.exports = {
         const { user } = req.session
         const db = req.app.get('db')
         if (user) {
-            const { user_id } = user
-            let quantity = await db.get_quantity([product_id, user_id])
-
+            const { id } = user
+            let quantity = await db.get_quantity([product_id, id])
+            console.log(quantity)
             if (quantity[0]) {
-                let newQuantity = ++quantity[0]
-                let cart = await db.increase_quantity([quantity])
+                let newQuantity = ++quantity[0].quantity
+                await db.update_quantity([newQuantity, product_id, id])
+                let cart = await db.get_cart([id])
+                console.log(cart)
+                res.status(200).send(cart)
+
             } else {
-                let cart = await req.app.get('db').add_to_cart([null, user_id, product_id, 1]);
+                await req.app.get('db').add_to_cart([null, id, product_id, 1])
+                let cart = await db.get_cart([id])
+                res.status(200).send(cart)
             }
 
         } else {
@@ -30,5 +36,32 @@ module.exports = {
         }
         //console.log(product_id)
 
+    },
+
+    getCart: async (req, res) => {
+        const db = req.app.get('db')
+        const {id} = req.session.user
+        let cart = await db.get_cart([id])
+        res.status(200).send(cart)
+    },
+
+    deleteCart: async function (req, res) {
+        const db = req.app.get('db')
+        const {id} = req.session.user
+        const {product_id} = req.params
+        await db.delete_item_in_cart([id, product_id])
+        let cart = await db.get_cart([id])
+        res.status(200).send(cart)
+    },
+
+    changeCartQuantity: async function (req, res) {
+        const db = req.app.get('db')
+        const {id} = req.session.user
+        const {quantity, product_id} = req.params
+        await db.update_quantity([quantity, product_id, id])
+        let cart = await db.get_cart([id])
+        res.status(200).send(cart)
     }
+
+
 }

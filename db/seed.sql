@@ -12,6 +12,12 @@ create table cart (
     quantity integer
 );
 
+create table portfolio (
+    portfolio_id serial primary key,
+    img text,
+    display boolean
+)
+
 create table users (
     id serial primary key,
     user_name varchar(180),
