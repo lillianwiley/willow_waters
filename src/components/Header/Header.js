@@ -21,7 +21,7 @@ export default class Header extends Component {
         })
     }
 
-
+// HEADER RENDERS AND NAV MENU //
     render() {
         return (
             <div>

@@ -3,13 +3,17 @@ require('dotenv').config();
 const express = require('express')
     , session = require('express-session')
     , massive = require('massive')
-    , axios = require('axios');
+    , axios = require('axios')
+    , bodyParser = require('body-parser');
 
 
 const app = express();
 
-const controller = require('./controller');
+app.use(bodyParser.json());
 
+const controller = require('./controller');
+const stripeCtrl = require('./stripeCtrl');
+// DESTRUCTING FROM ENV FILE //
 const {
     SERVER_PORT,
     SECRET,
@@ -18,30 +22,21 @@ const {
     CLIENT_SECRET,
     CONNECTION_STRING,
     NODE_ENV,
-    AUTH_ID,
-    STRIPE_SECRET_KEY
+    AUTH_ID
     
 } = process.env;
 
-var stripe = require("stripe")(STRIPE_SECRET_KEY);
-
-const charge = stripe.charges.create({
-  amount: 999,
-  currency: 'usd',
-  source: 'tok_visa',
-  receipt_email: 'jenny.rosen@example.com',
-});
-
+// MASSIVE //
 massive(CONNECTION_STRING).then(db => {
     app.set('db', db);
 })
-
+// SESSIONS //
 app.use(session({
     secret: SECRET,
     resave: false,
     saveUninitialized: true
 }))
-
+// AUTH 0 //
 app.get('/auth/callback', async (req, res) => {
     const payload = {
         client_id: REACT_APP_CLIENT_ID,
@@ -62,7 +57,7 @@ app.get('/auth/callback', async (req, res) => {
         picture,
         sub
     } = resWithUserData.data;
-    //console.log(resWithUserData)
+    
     
     let db = req.app.get('db');
     let foundUser = await db.find_user([sub])
@@ -85,8 +80,9 @@ function envCheck(req, res, next) {
     } else {
         next()
     }
+    // next()
 }
-
+ // ENDPOINTS W/ ENV MIDDLEWARE FOR DEV OR PRODUCTION LOG ON MODE //
 app.get('/api/user-data', envCheck, (req, res) => {
     console.log('user data')
     if(req.session.user) {
@@ -111,6 +107,11 @@ app.put('/api/cart/:product_id/:quantity', envCheck, controller.changeCartQuanti
 
 app.delete('/api/cart/:product_id', envCheck, controller.deleteCart);
 
+// STRIPE ENDPOINT //
+app.post('/api/payment', stripeCtrl.handlePayment)
+app.delete('/api/cart', controller.deleteUserCart)
+
+// SERVER PORT //
 app.listen(SERVER_PORT, () => {
     console.log(`willow waters on port ${SERVER_PORT}`)
 })

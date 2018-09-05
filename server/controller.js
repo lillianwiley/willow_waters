@@ -61,6 +61,16 @@ module.exports = {
         await db.update_quantity([quantity, product_id, id])
         let cart = await db.get_cart([id])
         res.status(200).send(cart)
+    },
+
+    deleteUserCart: async function (req, res) {
+        const db = req.app.get('db')
+        const {id} = req.session.user
+        console.log(id)
+        await db.delete_user_cart([id])
+        let cart = await db.get_cart([id])
+        res.status(200).send(cart)
+        
     }
 
 
