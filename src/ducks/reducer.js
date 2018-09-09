@@ -1,4 +1,4 @@
-import axios from 'axios';
+ import axios from 'axios';
 
 const initialState = {
     user: {},
@@ -8,7 +8,7 @@ const initialState = {
 
 const UPDATE_USER = 'UPDATE_USER';
 const ADD_TO_CART = 'ADD_TO_CART';
-const UPDATE_CART_TOTAL = 'UPDATE_CART_TOTAL'
+const UPDATE_CART_TOTAL = 'UPDATE_CART_TOTAL';
 
 export function updateUser(userObj) {
     return {

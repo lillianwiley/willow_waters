@@ -13,7 +13,7 @@ input {
   font-size: 15px;
   padding-left: 5px;
 }
-button {
+.login_button {
   margin-top: 15px;
   width: 70px;
   height: 30px;

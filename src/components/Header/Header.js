@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import Login from '../Login/Login';
 import './Header.css';
+import willow from '../../photos/floral-logo.png';
 
 
 export default class Header extends Component {
@@ -26,18 +27,23 @@ export default class Header extends Component {
         return (
             <div>
                 <div className='header'>
+                
                     <div className='menu' onClick={this.menuShowFn}>
                         <div className='buns-container'>
+                            <div></div>
                             <div></div>
                             <div></div>
                         </div>
                     </div>
                     <Link to='/'>
-                        <h5>Willow Waters
-                            Illustrations
-                        </h5>
+                        <img className='header_logo inline-p' src={willow} alt=""/>
+                        <span className='header_title inline-p'>WILLOW WATERS
+                        <p className="inline-p">ILLUSTRATIONS</p>
+                        </span>
+
+                        
                     </Link>
-                    <Link to='/cart'><button>Cart</button></Link>
+                    <Link to='/cart'><p className='header_cart_button'>Cart</p></Link>
                     <nav className={(this.state.menuShow ? "dropDownMenuShow" : '') + ' dropDownMenu'}>
                         <ul className='nav'>
                             <Login className="login" />

@@ -3,18 +3,70 @@
     margin: 0 auto;
     background: #f9f9f9;
     font-size: 24px;
-    padding: 25px;
+    padding: 0px;
 }
-.parallax {
-    padding: 100px 35px;
-    background: transparent;
-    background-image: url('../../photos/kwiley-rock.jpg'), url('../../photos/watercolor-pallet.jpg');
-    background-repeat: no-repeat;
-    background-size: 60vh;
+
+.first_body {
+    padding-top: 40%;
+    height: 70vh;
+    min-width: 100%;
+    /* background-color: #6969692a; */
+}
+
+/* @media(max-width: 500px){
+    .first_body{
+      width: 100%;
+      height: 100px;
+    }
+ } */
+
+.home_first_body {
+    background-color: #f9f9f9;
 }
 
 .info{
     z-index: 3;
     position: relative;
     color: maroon;
+}
+
+.hero-text {
+    position: absolute;
+    top: 45%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    font-style: italic;
+    font-size: 15px;
+}
+
+.shop_prints_button {
+    position: absolute;
+    top: 250%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background-color: rgba(129, 206, 122, 0.656);
+    font-size: 10px;
+    padding: 5px 32px;
+    border-radius: 70%;
+}
+
+.shop_custom_button {
+    position: absolute;
+    top: 400%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background-color: rgba(129, 206, 122, 0.656);
+    font-size: 10px;
+    padding: 5px 32px;
+}
+
+.hero-text2 {
+    position: absolute;
+    top: 205%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
 }

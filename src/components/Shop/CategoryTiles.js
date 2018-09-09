@@ -8,7 +8,9 @@ export default (props) => {
         <h2>
           {props.category.title}
         </h2>
-          <img src={props.category.imageUrl} alt=""/>
+        <div className="img-container">
+          <img className="shop-img" src={props.category.imageUrl} alt=""/>
+          </div>
       </Link>
     </div>
   )

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { updateCart, updateCartTotal } from '../../ducks/reducer';
 import Payment from '../stripe/Payment';
 import axios from 'axios';
+import './Cart.css'
 
 class Cart extends Component {
     //retrieving cart from database and saving it to state in redux//
@@ -20,7 +21,7 @@ class Cart extends Component {
             })
     }
     // CHANGE QTY OF ITEM INCREASE AND DECREASE W/ PRODID & PROD QTY RETURN NEW CART//
-    changeQuantity(productQuantity, productId){
+    changeQuantity(productId, productQuantity){
         axios.put(`/api/cart/${productId}/${productQuantity}`)
             .then(res => {
                 this.props.updateCart(res.data)
@@ -38,7 +39,9 @@ class Cart extends Component {
 
         this.props.updateCartTotal(total)
         return (
-            <div><h2>
+            <div className='cart_header'>
+                <h2>SHOPPING CART</h2>
+                <h2>
                 {this.props.cart[0] ? this.props.cart.map((eachProduct,i) => {
                     //console.log(eachProduct)
                     return (
@@ -53,7 +56,7 @@ class Cart extends Component {
                             <hr />
                         </div>
                     )
-                }) : 'You currently have no items in your cart'}
+                }) : 'You currently have no items in your cart.'}
             </h2>
             <h3>${total}</h3>
             <Payment />

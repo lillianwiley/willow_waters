@@ -12,6 +12,7 @@ const app = express();
 app.use(bodyParser.json());
 
 const controller = require('./controller');
+// STRIPE //
 const stripeCtrl = require('./stripeCtrl');
 // DESTRUCTING FROM ENV FILE //
 const {

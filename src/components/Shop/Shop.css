@@ -1,3 +1,12 @@
 .shopFront {
     background: #85777b;
+    width: 10vw;
+}
+
+.img-container {
+    width: 100%;
+}
+
+.shop-img {
+    width: 100vw;
 }
