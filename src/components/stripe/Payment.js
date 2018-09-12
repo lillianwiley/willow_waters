@@ -31,7 +31,7 @@ class Checkout extends Component {
                 image="../../photos/willow_logo.jpg"
                 token={this.onToken}
                 stripeKey={process.env.REACT_APP_STRIPE_KEY}
-                amount={this.props.amount}
+                amount={this.props.amount*100}
                 billingAddress={true}
                 shippingAddress={true}
             />

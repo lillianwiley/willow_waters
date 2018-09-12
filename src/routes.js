@@ -10,6 +10,7 @@ import ProductsDisplay from './components/ProductsDisplay/ProductsDisplay';
 import Portfolio from './components/Portfolio/Portfolio';
 import Contact from './components/Contact/Contact';
 import Cart from './components/cart/Cart';
+import ImageUploader from './components/imageUploader/ImageUploader';
 
 export default (
     <Switch>
@@ -23,5 +24,6 @@ export default (
         <Route path='/portfolio' component={Portfolio} />
         <Route path='/contact' component={Contact} />
         <Route path='/cart' component={Cart} />
+        <Route path='/imageuploader' component={ImageUploader} />
     </Switch>
 )

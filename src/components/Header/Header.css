@@ -42,8 +42,14 @@
     top: 50%;
     left: 40%;
     transform: translate(-50%, -50%);
+    align-items: center;
   }
 
+  /* .testing_header {
+    background: red;
+    width: 100px;
+  } */
+  
   .header_logo {
     height: 25vh;
     width: 30vh;

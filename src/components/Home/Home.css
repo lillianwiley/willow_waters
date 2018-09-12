@@ -8,20 +8,42 @@
 
 .first_body {
     padding-top: 40%;
-    height: 70vh;
+    height: 500px;
     min-width: 100%;
-    /* background-color: #6969692a; */
+    position: relative;
 }
-
-/* @media(max-width: 500px){
-    .first_body{
-      width: 100%;
-      height: 100px;
-    }
- } */
 
 .home_first_body {
     background-color: #f9f9f9;
+}
+
+.home_first_body>h1{
+    padding: 30px;
+    color: #5d6879;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 30px;
+    text-align: center;
+}
+
+hr.style-one {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(206, 156, 19, 0.75), rgba(0, 0, 0, 0));
+}
+
+hr.style-two {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(206, 156, 19, 0.75), rgba(0, 0, 0, 0));
+}
+
+.floral_break_img{
+    margin-top: 35px;
+    margin-bottom: 25px;
+    margin-left: 10%;
+    width: 300px;
+    height: 200px;
+    
 }
 
 .info{
@@ -32,41 +54,118 @@
 
 .hero-text {
     position: absolute;
-    top: 45%;
-    left: 55%;
+    top: 470px;
+    left: 200px;
+    height: 100%;
+    width:100%;
     transform: translate(-50%, -50%);
     z-index: 10;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    letter-spacing: 0;
+    line-height: 1em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 700;
+    font-style: normal;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: #3d4450;
+}
+
+.sub-hero-title {
+    position: relative;
+    top: 20px;
+    z-index: 10;
     font-style: italic;
-    font-size: 15px;
+    font-size: 40px;
+    color:  #3d4450;
+}
+
+.hero-btns {
+    height: 300px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
 }
 
 .shop_prints_button {
-    position: absolute;
-    top: 250%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     z-index: 10;
-    background-color: rgba(129, 206, 122, 0.656);
-    font-size: 10px;
-    padding: 5px 32px;
-    border-radius: 70%;
+    background-color: #fc7eb9;
+    border-color: #fc7eb9;
+    font-size: 13px;
+    letter-spacing: .5em;
+    padding: 15px 32px;
 }
 
 .shop_custom_button {
-    position: absolute;
-    top: 400%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     z-index: 10;
-    background-color: rgba(129, 206, 122, 0.656);
-    font-size: 10px;
-    padding: 5px 32px;
+    background-color: #fc7eb9;
+    border-color: #fc7eb9;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 13px;
+    padding: 15px 32px;
+    letter-spacing: .5em;
+    font-style: normal;
+}
+
+.portfolio_button {
+    z-index: 10;
+    background-color: #fc7eb9;
+    border-color: #fc7eb9;
+    font-size: 13px;
+    letter-spacing: .5em;
+    padding: 15px 32px;
 }
 
 .hero-text2 {
     position: absolute;
-    top: 205%;
+    top: 300%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
+}
+
+.hero-text2>h1{
+    margin-top: 400px;
+    font-size: 20px;
+    color: white;
+}
+
+.crest_image{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height: 60vh;
+}
+
+.wedding_button{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 15px;
+    background-color: #fc7eb9;
+    border-color: #fc7eb9;
+    font-size: 13px;
+    letter-spacing: .5em;
+    padding: 15px 32px;
+}
+
+hr.style-three{
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(206, 156, 19, 0.75), rgba(0, 0, 0, 0));
+}
+
+.second_body{
+    font-size: 25px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: normal;
+    color: #3d4450;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 25px;
 }

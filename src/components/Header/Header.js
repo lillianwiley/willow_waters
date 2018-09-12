@@ -37,23 +37,23 @@ export default class Header extends Component {
                     </div>
                     <Link to='/'>
                         <img className='header_logo inline-p' src={willow} alt=""/>
-                        <span className='header_title inline-p'>WILLOW WATERS
-                        <p className="inline-p">ILLUSTRATIONS</p>
+                        <span id='header_title' className='header_title inline-p'>
+                        <div className='testing_header'>
+                        WILLOW WATERS ILLUSTRATIONS
+                        </div> 
                         </span>
-
-                        
                     </Link>
                     <Link to='/cart'><p className='header_cart_button'>Cart</p></Link>
                     <nav className={(this.state.menuShow ? "dropDownMenuShow" : '') + ' dropDownMenu'}>
                         <ul className='nav'>
-                            <Login className="login" />
-                            <Link to='/'><li>Home</li></Link>
-                            <Link to='/about'><li>About</li></Link>
-                            <Link to='/shop'><li>Shop</li></Link>
-                            <Link to='/products/1'><li>Wedding</li></Link>
-                            <Link to='/portfolio'><li>Portfolio</li></Link>
-                            <Link to='/contact'><li>Contact</li></Link>
-                            <Link to='/cart'><li>Cart</li></Link>
+                            <Login/>
+                            <Link to='/'><li onClick={this.menuShowFn}>Home</li></Link>
+                            <Link to='/about'><li onClick={this.menuShowFn}>About</li></Link>
+                            <Link to='/shop'><li onClick={this.menuShowFn}>Shop</li></Link>
+                            <Link to='/products/1'><li onClick={this.menuShowFn}>Wedding</li></Link>
+                            <Link to='/portfolio'><li onClick={this.menuShowFn}>Portfolio</li></Link>
+                            <Link to='/contact'><li onClick={this.menuShowFn}>Contact</li></Link>
+                            <Link to='/cart'><li onClick={this.menuShowFn}>Cart</li></Link>
                         </ul>
                     </nav>
                 </div>

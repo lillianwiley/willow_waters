@@ -22,19 +22,28 @@ class Cart extends Component {
     }
     // CHANGE QTY OF ITEM INCREASE AND DECREASE W/ PRODID & PROD QTY RETURN NEW CART//
     changeQuantity(productId, productQuantity){
+        console.log({productId, productQuantity})
+        if (productQuantity) {
+
         axios.put(`/api/cart/${productId}/${productQuantity}`)
             .then(res => {
+                console.log(res.data)
                 this.props.updateCart(res.data)
             })
+            .catch(() => {
+                console.log('error error swiss family robinson')
+            })
+        }
     }
     // SHOPPING CART RENDERS AND REDUCE TO TOTAL ALL PRODUCTS //
     render() {
+        let total = ''
        if (this.props.cart[0]) {
-           var total = this.props.cart.reduce((accumulator, eachProduct) => {
+            total = this.props.cart.reduce((accumulator, eachProduct) => {
             return accumulator += (eachProduct.quantity*eachProduct.price)
            }, 0).toFixed(2)
         } else {
-            var total = '0.00'
+            total = '0.00'
         }
 
         this.props.updateCartTotal(total)
@@ -46,12 +55,13 @@ class Cart extends Component {
                     //console.log(eachProduct)
                     return (
                         <div key={i}>
+                            <img src={eachProduct.img_url} alt=""/>
                             <h5>title {eachProduct.title}</h5>
-                            <h6>price {eachProduct.price}</h6>
+                            <h6>price ${eachProduct.price}</h6>
                             <h6>quantity {eachProduct.quantity}</h6>
                             <h6>product id {eachProduct.product_id}</h6>
-                            <h4>{eachProduct.price*eachProduct.quantity}</h4>
-                            <input onChange={(e) => this.changeQuantity(e.target.value, eachProduct.product_id )}type="text"/>
+                            <h4>${eachProduct.price*eachProduct.quantity}</h4>
+                            <input onChange={(e) => this.changeQuantity(eachProduct.product_id, e.target.value )}type="text"/>
                             <button onClick={() => this.deleteFromCart(eachProduct.product_id)}>Remove item</button>
                             <hr />
                         </div>

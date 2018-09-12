@@ -15,12 +15,10 @@ input {
 }
 .login_button {
   margin-top: 15px;
-  width: 70px;
+  width: 100px;
   height: 30px;
-  border-radius: 20px;
-  background: rgb(14, 201, 145);
-  font-size: 10px;
-  font-family: 'Overlock', cursive;
+  font-size: 15px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 button:focus {
   outline: none;

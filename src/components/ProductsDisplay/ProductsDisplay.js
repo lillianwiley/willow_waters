@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { updateCart } from '../../ducks/reducer';
+import './ProductsDisplay.css';
 
 
 class ProductDisplay extends Component {
@@ -36,6 +37,7 @@ class ProductDisplay extends Component {
     }
 
     render() {
+        console.log(this.state.filteredProducts)
         console.log(this.props.cart)
         const { filteredProducts } = this.state;
         let displayMe = filteredProducts.map((eachOne, i) => {
@@ -45,6 +47,8 @@ class ProductDisplay extends Component {
                     <h1>{eachOne.title}</h1>
                     <p>{eachOne.description}</p>
                     <h3>{eachOne.price}</h3>
+                    <img src={eachOne.img_url} alt=""/>
+
                     <button onClick={() => this.addToCart(eachOne.product_id)}>Add to cart</button>
 
                 </div>
