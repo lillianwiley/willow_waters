@@ -37,7 +37,8 @@ const {
     S3_BUCKET,
     AWS_ACCESS_KEY_ID,
     AWS_SECRET_ACCESS_KEY,
-    HOME_PAGE
+    HOME_PAGE,
+    AUTH_URI_REDIRECT
     
 } = process.env;
 
@@ -58,7 +59,7 @@ app.get('/auth/callback', async (req, res) => {
         client_secret: CLIENT_SECRET,
         code: req.query.code,
         grant_type: 'authorization_code',
-        redirect_uri: `http://${req.headers.host}/auth/callback`
+        redirect_uri: AUTH_URI_REDIRECT
     }
 
     
