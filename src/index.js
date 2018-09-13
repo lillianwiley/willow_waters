@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import Store from './ducks/Store';
 import './index.css';
 import App from './App';
-import {unregister} from './registerServiceWorker';
+// import {unregister} from './registerServiceWorker';
 
 ReactDOM.render(
 <Provider store={Store}>
@@ -14,4 +14,4 @@ ReactDOM.render(
     </HashRouter>
 </Provider>
 , document.getElementById('root'));
-unregister();
+// unregister();

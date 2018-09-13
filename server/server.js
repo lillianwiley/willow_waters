@@ -7,7 +7,13 @@ const express = require('express')
     , bodyParser = require('body-parser');
 
 
+    
 const app = express();
+
+
+/* if someone asks for soemthing from our server it says look in build folder for a file of that name and if exists give it to them */
+
+app.use( express.static( `${__dirname}/../build` ) );
 
 app.use(bodyParser.json());
 
@@ -30,7 +36,8 @@ const {
     AUTH_ID,
     S3_BUCKET,
     AWS_ACCESS_KEY_ID,
-    AWS_SECRET_ACCESS_KEY
+    AWS_SECRET_ACCESS_KEY,
+    HOME_PAGE
     
 } = process.env;
 
@@ -102,7 +109,7 @@ app.get('/api/user-data', envCheck, (req, res) => {
 
 app.get('/auth/logout', (req, res) => {
     req.session.destroy();
-    res.redirect('http://localhost:3000/');
+    res.redirect(HOME_PAGE);
 })
 
 // AMAZON S3C//

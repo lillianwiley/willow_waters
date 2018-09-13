@@ -16,7 +16,7 @@
     position: fixed;
     z-index: 100;
     top: 0;
-    padding: 30px;
+    padding: 35px;
   }
 
   .inline-p {
@@ -68,11 +68,18 @@
   }
   
   .nav {
-    list-style-type: none;
-    outline-color: none;
-    font-style: normal;
     display: flex;
+    width: 100%;
+    margin-top: 15px;
+    font-size: 20px;
+    list-style: none;
+    font-family: 'Prata', serif;
+    letter-spacing: .25em;
     flex-direction: column;
+    padding-left: 15px;
+    color: #f2aece;
+    justify-content: space-between;
+    line-height: 1.8;
   }
 
   .menu {
@@ -114,7 +121,7 @@
     position: relative;
     display: inline-block;
     height: 100vh;
-    background-color: #9eaccef8;
+    background-color: rgba(255,246,240,.93);
     width: 0%;
     overflow: hidden;
     transition: 1000ms ease-in, 500ms;
@@ -137,4 +144,14 @@
     .dropDownMenuShow{
       width: 100%
     }
+ }
+
+ @media(min-width : 500px){
+   .header{
+     height: 20%;
+   }
+   .hero-btns{
+     width:100%;
+     display: flex
+   }
  }

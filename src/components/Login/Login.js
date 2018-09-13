@@ -16,7 +16,7 @@ class Login extends Component {
     }
 
     logout() {
-        window.location = 'http://localhost:3030/auth/logout'
+        window.location = process.env.REACT_APP_LOGOUT
     }
 
     handleLoginLogout() {
@@ -31,7 +31,7 @@ class Login extends Component {
     render() {
         console.log(this.props.user)
         return (
-            <button className='login_button' onClick={this.handleLoginLogout}>{this.props.user.id ? 'Logout' : 'Login / Sign Up'}</button>
+            <button className='nav' onClick={this.handleLoginLogout}>{this.props.user.id ? 'Logout' : 'Login / Sign Up'}</button>
         )
     }
 }

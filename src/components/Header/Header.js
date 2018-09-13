@@ -47,13 +47,13 @@ export default class Header extends Component {
                     <nav className={(this.state.menuShow ? "dropDownMenuShow" : '') + ' dropDownMenu'}>
                         <ul className='nav'>
                             <Login/>
-                            <Link to='/'><li onClick={this.menuShowFn}>Home</li></Link>
-                            <Link to='/about'><li onClick={this.menuShowFn}>About</li></Link>
-                            <Link to='/shop'><li onClick={this.menuShowFn}>Shop</li></Link>
-                            <Link to='/products/1'><li onClick={this.menuShowFn}>Wedding</li></Link>
-                            <Link to='/portfolio'><li onClick={this.menuShowFn}>Portfolio</li></Link>
-                            <Link to='/contact'><li onClick={this.menuShowFn}>Contact</li></Link>
-                            <Link to='/cart'><li onClick={this.menuShowFn}>Cart</li></Link>
+                            <Link to='/'><li className='nav' onClick={this.menuShowFn}>Home</li></Link>
+                            <Link to='/about'><li className='nav' onClick={this.menuShowFn}>About</li></Link>
+                            <Link to='/shop'><li className='nav' onClick={this.menuShowFn}>Shop</li></Link>
+                            <Link to='/products/1'><li className='nav' onClick={this.menuShowFn}>Wedding</li></Link>
+                            <Link to='/portfolio'><li className='nav' onClick={this.menuShowFn}>Portfolio</li></Link>
+                            <Link to='/contact'><li className='nav' onClick={this.menuShowFn}>Contact</li></Link>
+                            <Link to='/cart'><li className='nav' onClick={this.menuShowFn}>Cart</li></Link>
                         </ul>
                     </nav>
                 </div>
