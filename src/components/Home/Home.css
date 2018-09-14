@@ -1,24 +1,35 @@
 .container{
-    max-width: 100%;
+    /* max-width: 100%; */
+    width: 100vw;
     margin: 0 auto;
     background: #f9f9f9;
     font-size: 24px;
     padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .first_body {
-    padding-top: 40%;
-    height: 500px;
-    min-width: 100%;
+    margin-top: 70px;
+    height: 120vw;
+    min-width: 100vw;
     position: relative;
+    margin: 0 auto;
+    
 }
 
 .home_first_body {
     background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 700px;
 }
 
 .home_first_body>h1{
-    padding: 30px;
+    padding-top: 30px;
     color: #5d6879;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 25px;
@@ -39,11 +50,11 @@ hr.style-two {
 }
 
 .floral_break_img{
-    margin-top: 35px;
-    margin-bottom: 25px;
+    /* margin-top: 15px;
+    margin-bottom: 10px; */
     margin-left: 10%;
-    width: 300px;
-    height: 200px;
+    width: 80%;
+    height: 300px;
     
 }
 
@@ -54,12 +65,9 @@ hr.style-two {
 }
 
 .hero-text {
-    position: absolute;
-    top: 470px;
-    left: 200px;
     height: 100%;
     width:100%;
-    transform: translate(-50%, -50%);
+    margin-top: 210px;
     z-index: 10;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 25px;
@@ -71,7 +79,7 @@ hr.style-two {
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     color: #3d4450;
 }
@@ -141,7 +149,8 @@ hr.style-two {
 .crest_image{
     margin-top: 30px;
     margin-bottom: 30px;
-    height: 60vh;
+    width: 100%;
+    height: 500px;
 }
 
 .wedding_button{
@@ -170,12 +179,16 @@ hr.style-three{
     text-align: center;
     margin-top: 20px;
     margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .footer_div{
-    margin-bottom: 30px;
+    padding-top: 20px;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     background: rgba(255,246,240,.93);
     color: #f2aece;
@@ -203,11 +216,13 @@ hr.style-three{
 .footer_h5{
     padding-left: 18px;
     padding-top: 20px;
+    margin-bottom: 20px;
+
 }
 
 .footer_links{
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     list-style: none;
     display: flex;
     flex-direction: row;
@@ -222,4 +237,18 @@ hr.style-three{
     display: flex;
     justify-content: center;
 }
+
+@media (min-width: 750px) {
+    .first_body {
+        height: 100vh;
+    }
+
+    .floral_break_img{
+        width: 400px;
+    }
+
+    .crest_image{
+        width: 500px;
+    }
+  }
 

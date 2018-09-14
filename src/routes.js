@@ -22,7 +22,7 @@ export default (
         <Route path='/charcoal' component={Login} />
         <Route path='/products/:category' component={ProductsDisplay} />
         <Route path='/portfolio' component={Portfolio} />
-        <Route path='/contact' component={Contact} />
+        {/* <Route path='/contact' component={Contact} /> */}
         <Route path='/cart' component={Cart} />
         <Route path='/imageuploader' component={ImageUploader} />
     </Switch>
