@@ -73,8 +73,6 @@ export default class Header extends Component {
                             <Link to='/about'><li className='nav' onClick={this.menuShowFn}>About</li></Link>
                             <Link to='/shop'><li className='nav' onClick={this.menuShowFn}>Shop</li></Link>
                             <Link to='/products/1'><li className='nav' onClick={this.menuShowFn}>Wedding</li></Link>
-                            <Link to='/portfolio'><li className='nav' onClick={this.menuShowFn}>Portfolio</li></Link>
-                            <Link to='/contact'><li className='nav' onClick={this.menuShowFn}>Contact</li></Link>
                             <Link to='/cart'><li className='nav' onClick={this.menuShowFn}>Cart</li></Link>
                         </ul>
                     </nav>

@@ -34,7 +34,9 @@ class Checkout extends Component {
                 amount={this.props.amount*100}
                 billingAddress={true}
                 shippingAddress={true}
-            />
+            >
+            <button className='stripe-checkout'>Checkout</button>
+            </StripeCheckout>
         );
     }
 }
