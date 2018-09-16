@@ -12,6 +12,7 @@ export default (props) => {
         <div className="img-container">
           <img className="shop-img" src={props.category.imageUrl} alt=""/>
           </div>
+          
       </Link>
     </div>
   )

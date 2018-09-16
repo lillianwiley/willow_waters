@@ -72,6 +72,15 @@ module.exports = {
         let cart = await db.get_cart([id])
         res.status(200).send(cart)
         
+    },
+
+    getCartQuantity: (req, res) => {
+        const db = req.app.get('db')
+        const {id} = req.session.user
+        db.get_all_cart_quantity([id])
+        .then(quantity => {
+            res.status(200).send(quantity)
+        })
     }
 
 

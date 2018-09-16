@@ -35,21 +35,17 @@ export default class Home extends Component {
                             </div>
                         </div>
                     </div>
-                    {/* <div className='first_body'>
-                        </div> */}
-
                 </Parallax>
                 <Parallax strength={300} bg>
                     <div className='home_first_body'>
-                        <h1>Willow Waters Original watercolors - beautifully simple and magically colorful.</h1>
+                        <h1>Willow Waters Original watercolors - beautifully simple and magically colorful
+                        </h1>
                         <hr className='style-one' />
-                        <h3>
                             <img className='floral_break_img' src={Willow} alt="" />
-                        </h3>
-                        <hr className='style-two' />
+                        <hr className='style-one' />
                         <h1>
-                            Curate the lifestyle you want with Willow Waters' botanical illustrations and beautiful watercolors.
-                            </h1>
+                            Curate the lifestyle you want with Willow Waters' botanical illustrations and beautiful watercolors
+                        </h1>
                     </div>
                     <Background className="custom-bg">
                         <img src='' alt="fill murray" />
@@ -81,7 +77,7 @@ export default class Home extends Component {
                         <Link to=''><button className='wedding_button'>
                             Browse Wedding Suites
                             </button></Link>
-                        <hr className='style-three' />
+                        <hr className='style-one' />
 
 
                     </div>

@@ -79,11 +79,11 @@ app.get('/auth/callback', async (req, res) => {
     let foundUser = await db.find_user([sub])
     if (foundUser[0]) {
         req.session.user = foundUser[0];
-        res.redirect('/#/private')
+        res.redirect('/#/')
     } else {
         let createdUser = await db.create_users([name, email, picture, sub])
         req.session.user = createdUser[0];
-        res.redirect('/#/private');
+        res.redirect('/#/');
     }
 })
 
@@ -152,6 +152,7 @@ app.get('/api/sign-s3', (req, res) => {
 app.get('/api/products', controller.getAllProducts);
 app.get('/api/products/:c_id', controller.getAllFromCategory);
 app.get('/api/cart', envCheck, controller.getCart);
+app.get('/api/getcartquantity', controller.getCartQuantity);
 
 app.post('/api/products/:product_id', envCheck, controller.addToCart);
 

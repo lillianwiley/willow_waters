@@ -35,6 +35,8 @@ class Cart extends Component {
             })
         }
     }
+
+
     // SHOPPING CART RENDERS AND REDUCE TO TOTAL ALL PRODUCTS //
     render() {
         let total = ''
@@ -54,15 +56,14 @@ class Cart extends Component {
                 {this.props.cart[0] ? this.props.cart.map((eachProduct,i) => {
                     //console.log(eachProduct)
                     return (
-                        <div key={i}>
-                            <img src={eachProduct.img_url} alt=""/>
-                            <h5>title {eachProduct.title}</h5>
-                            <h6>price ${eachProduct.price}</h6>
-                            <h6>quantity {eachProduct.quantity}</h6>
-                            <h6>product id {eachProduct.product_id}</h6>
+                        <div className='mapped-cart'key={i}>
+                            <button className='remove-item' onClick={() => this.deleteFromCart(eachProduct.product_id)}>Remove item</button>
+                            <img className='mapped-img' src={eachProduct.img_url} alt=""/>
+                            <h5>{eachProduct.title}</h5>
+                            <h6>${eachProduct.price}</h6>
+                            <h6>Qty. {eachProduct.quantity}</h6>
                             <h4>${eachProduct.price*eachProduct.quantity}</h4>
-                            <input onChange={(e) => this.changeQuantity(eachProduct.product_id, e.target.value )}type="text"/>
-                            <button onClick={() => this.deleteFromCart(eachProduct.product_id)}>Remove item</button>
+                            <input className='input-box' onChange={(e) => this.changeQuantity(eachProduct.product_id, e.target.value )}type="box"/>
                             <hr />
                         </div>
                     )

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import Login from '../Login/Login';
 import './Header.css';
 import willow from '../../photos/floral-logo.png';
@@ -10,9 +11,11 @@ export default class Header extends Component {
         super();
 
         this.state = {
-            menuShow: false
+            menuShow: false,
+            allQuantity: 0
         }
         this.menuShowFn = this.menuShowFn.bind(this)
+        this.getCartQuantity = this.getCartQuantity.bind(this)
     }
 
 
@@ -20,6 +23,25 @@ export default class Header extends Component {
         this.setState({
             menuShow: !this.state.menuShow
         })
+    }
+// updating the visible quantity for the cart in header //
+    getCartQuantity(){
+        axios.get('/api/getcartquantity')
+            .then(res => {
+                this.setState({
+                    allQuantity: res.data[0].sum
+                })
+            })
+    }
+
+    componentDidMount(){
+        this.getCartQuantity()
+    }
+
+    componentDidUpdate(prevProps){
+        if(this.state.allQuantity !== prevProps.allQuantity){
+            this.getCartQuantity()
+        }
     }
 
 // HEADER RENDERS AND NAV MENU //
@@ -43,7 +65,7 @@ export default class Header extends Component {
                         </div> 
                         </span>
                     </Link>
-                    <Link to='/cart'><p className='header_cart_button'>Cart</p></Link>
+                    <Link to='/cart'><p className='header_cart_button'>Cart {this.state.allQuantity}</p></Link>
                     <nav className={(this.state.menuShow ? "dropDownMenuShow" : '') + ' dropDownMenu'}>
                         <ul className='nav'>
                             <Login/>

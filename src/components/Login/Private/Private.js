@@ -21,16 +21,16 @@ class Private extends Component {
     render(){
         let {user} = this.props;
         return(
-            <div>
+            <div className='user-info' >
                 <h1>Account Details</h1>
                 <hr /><hr /><hr />
                 {
                     user.user_name ? (
-                        <div>
+                        <div >
                             <p>Account Holder: {user.user_name}</p>
                             <p>Email: {user.email}</p>
                             <p>Account ID: {user.auth_id}</p>
-                            <img src={user.picture} alt=""/>
+                            <img className='user-logo' src={user.picture} alt=""/>
                         </div>
                     )
                     : (<p>Please log in</p>)

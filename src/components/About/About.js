@@ -6,6 +6,17 @@ export default class About extends Component {
   render() {
     return (
       <div className='about_main'>
+      <Parallax
+          bgClassName='hair-flip'
+          bgImage={require('../../photos/hairflip.jpg')}
+          bgHeight={"120%"}
+          bgImageAlt="about"
+          strength={200}
+        >
+          <div className='first_body'>
+          </div>
+
+        </Parallax>
         <Parallax>
           <div className='about_body'>
             <h2>Hey there friends!</h2>
