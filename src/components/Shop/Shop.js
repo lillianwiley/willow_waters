@@ -26,12 +26,7 @@ export default class Shop extends Component {
         title: 'Custom',
         imageUrl: "https://instagram.fmkc1-1.fna.fbcdn.net/vp/ba164811c772beba332188fa5c16aa48/5C2D5402/t51.2885-15/e35/23969573_544892225903006_2915370929477386240_n.jpg",
         category_id: 4
-      },
-      // {
-      //   title: 'Other',
-      //   imageUrl: "https://instagram.fmkc1-1.fna.fbcdn.net/vp/95bb64397c69e0a0a292725253b36a89/5C31114C/t51.2885-15/e35/24254166_2434923990065532_4278815508842676224_n.jpg",
-      //   category_id: 5
-      // }
+      }
     ]
   }
 
@@ -70,7 +65,8 @@ export default class Shop extends Component {
     return (
       <div className='cat-tiles' >
         <Link to='/'><button>Back to Home</button></Link>
-        <h1 className='categories' >Categories</h1>
+        <h1 className='categories'>Categories</h1>
+        <hr className='category-hr'/>
         {mappedCategories}
         <div className='footer_div'>
           <footer>

@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { Parallax, Background } from 'react-parallax';
 import { Link } from 'react-router-dom';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Willow from '../../photos/transparent_flowers.png'
-import Crest from '../../photos/wedding_crest.jpg';
+import Crest from '../../photos/transparent-crest.png';
 import './Home.css';
 
 export default class Home extends Component {
@@ -18,7 +16,7 @@ export default class Home extends Component {
                     bgImageAlt="peonies"
                     strength={200}
                 >
-                    <div className='first_body'>
+                    <div className='first-prallax-img'>
                         <div className="hero-text">
                             <h1 className="hero-title">Hello Friends!</h1>
                             <h1 className='sub-hero-title'>Ready to stand out?</h1>
@@ -56,18 +54,18 @@ export default class Home extends Component {
                 </div> */}
                 <Parallax
                     bgImage={require('../../photos/tree-tunnel.jpg')}
-                    bgHeight={'800px'}
+                    bgHeight={'900px'}
                     bgWidth={'650px'}
                     bgImageAlt="peonies"
                     strength={200}
                 >
-                    <div className='first_body'>
+                    <div className='third-parallax-body'>
 
                     </div>
                     <div style={{ height: '200px' }} />
                 </Parallax>
                 <Parallax strength={300}>
-                    <div className='second_body'>
+                    <div className='home-second-body'>
                         <h2>
                             Tying the knot? Whatever your design need is, with my rigorous design background I am uniquely qualified to bring your ideas to life.
                             </h2>
@@ -91,7 +89,7 @@ export default class Home extends Component {
                     bgImageAlt="peonies"
                     strength={200}
                 >
-                    <div className='first_body'>
+                    <div className='third-parallax-body'>
                     </div>
                     <div style={{ height: '200px' }} />
                 </Parallax>

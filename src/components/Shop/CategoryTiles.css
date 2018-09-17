@@ -1,8 +1,22 @@
-/* .cat-tiles{
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    margin: 0 auto;
-    width: 50%;
-    height: 20%;
-} */
+.shop-img{
+    width: 250px;
+    border-style: solid;
+    border-width: 20px;
+    border-color: #dee0ec;
+}
+
+.cat-title{
+    padding-top: 30px;
+    text-align: center;
+    color: #3d4450;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 30px;
+    letter-spacing: .12em;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+
+}
+
+

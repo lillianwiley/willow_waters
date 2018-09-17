@@ -1,22 +1,24 @@
 .container{
-    /* max-width: 100%; */
+    max-width: 100%;
     width: 100vw;
-    margin: 0 auto;
-    background: #f9f9f9;
+    background: #fff;
     font-size: 24px;
-    padding: 0px;
-    display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; 
 }
 
-.first_body {
+.first-parallax-img{
+    position: relative;
+    height: 120vh;
+    margin: 0 auto;
+}
+
+.third-parallax-body{
     margin-top: 70px;
     height: 120vw;
     min-width: 100vw;
     position: relative;
     margin: 0 auto;
-    
 }
 
 .home_first_body {
@@ -26,6 +28,7 @@
     align-items: center;
     justify-content: space-evenly;
     height: 700px;
+    width: 100%;
 }
 
 .home_first_body>h1{
@@ -36,7 +39,6 @@
     text-align: center;
     display: flex;
     flex-direction: column;
-    
 }
 
 .home_first_body>hr{
@@ -58,12 +60,11 @@ hr.style-one {
 .hero-text {
     height: 100%;
     width:100%;
+    padding: 30px;
     margin-top: 210px;
     z-index: 10;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 25px;
-    letter-spacing: 0;
-    line-height: 1em;
+    line-height: 1.2em;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: 700;
     font-style: normal;
@@ -73,20 +74,34 @@ hr.style-one {
     justify-content: space-around;
     align-items: center;
     color: #3d4450;
+    font-weight: 200px;
+}
+
+.hero-text{
+    padding-top: 30px;
+    font-size: 20px;
+    line-height: 40px;
+    font-weight: 200;
+    font-style: oblique;
 }
 
 .sub-hero-title {
     position: relative;
     top: 20px;
     z-index: 10;
-    font-style: italic;
-    font-size: 40px;
-    color:  #3d4450;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: normal;
+    font-size: 35px;
+    text-transform: uppercase;
+    color:  #bbc0e2;
+    text-shadow: 2px 2px #3d4450;
+    padding-bottom: 20px;
 }
 
 .hero-btns {
     height: 300px;
     width: 100%;
+    padding-top: 40px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -99,8 +114,11 @@ hr.style-one {
     background-color: #fc7eb9;
     border-color: #fc7eb9;
     font-size: 13px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     letter-spacing: .5em;
+    font-style: normal;
     padding: 15px 32px;
+    color:#3d4450;
 }
 
 .shop_custom_button {
@@ -112,15 +130,19 @@ hr.style-one {
     padding: 15px 32px;
     letter-spacing: .5em;
     font-style: normal;
+    color: #3d4450;
 }
 
 .portfolio_button {
     z-index: 10;
     background-color: #fc7eb9;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: normal;
     border-color: #fc7eb9;
     font-size: 13px;
     letter-spacing: .5em;
     padding: 15px 32px;
+    color: #3d4450;
 }
 
 .hero-text2 {
@@ -141,7 +163,7 @@ hr.style-one {
     margin-top: 30px;
     margin-bottom: 30px;
     width: 100%;
-    height: 500px;
+    height: 400px;
 }
 
 .wedding_button{
@@ -153,9 +175,10 @@ hr.style-one {
     font-size: 13px;
     letter-spacing: .5em;
     padding: 15px 32px;
+    color: #3d4450;
 }
 
-.second_body{
+.home-second-body{
     font-size: 20px;
     letter-spacing: .25em;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -177,6 +200,7 @@ hr.style-one {
     align-items: center;
     background: rgba(255,246,240,.93);
     color: #f2aece;
+    width: 100vw;
 }
 
 .p{

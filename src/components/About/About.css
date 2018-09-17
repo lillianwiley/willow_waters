@@ -57,6 +57,11 @@
     justify-content: center;
     margin-top: 100px;
     background: rgba(54, 53, 53, 0.274);
+    margin-top: 70px;
+    height: 120vw;
+    min-width: 100vw;
+    position: relative;
+    margin: 0 auto;
 }
 
 .second_body{
@@ -64,6 +69,7 @@
     justify-content: center;
     margin-top: 400px;
     background: rgba(54, 53, 53, 0.274);
+    
 }
 
 .second_body_about{
@@ -81,7 +87,7 @@
 }
 
 .bold-text{
-    color: #bbc0e2;
+    color: #97a4c4;
     font-size: 30px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-style: italic;

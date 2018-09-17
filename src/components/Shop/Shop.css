@@ -4,6 +4,26 @@
     flex-wrap: wrap;
     margin: 0 auto;
     align-items: center;
+    width: 30px;
+}
+
+.cat-tiles>h1{
+    margin-top: 120px;
+    font-style: ;
+    letter-spacing: .12em;
+    color: #f2aece;
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 200;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.category-hr{
+    border: 0;
+    height: 1px;
+    width: 350px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(61, 68, 80, 0.75), rgba(0, 0, 0, 0));
 }
 
 .img-container {
@@ -15,16 +35,4 @@
     height: 10%;
     margin-bottom: 20%;
     justify-content: space-between;
-}
-
-
-.categories{
-    width: 50%;
-    margin-top: 100px;
-    justify-content: space-evenly;
-}
-
-.cat-tiles{
-    width: 60%;
-    height: 40%;
 }

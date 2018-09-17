@@ -52,8 +52,8 @@ class Cart extends Component {
         return (
             <div className='cart_container'>
                 <h2 className='cart-header'>SHOPPING CART</h2>
-                <p className='span-list'>ITEM <span> PRICE </span> QTY. <span>SUB TOTAL</span> </p>
-                <hr className='hr-cart'/>
+                <p className='span-list'>ITEM</p> <p className='span-list2'><span> PRICE </span> QTY. <span>SUB TOTAL</span></p>
+                <hr className='hr-cart' />
                 {this.props.cart[0] ? this.props.cart.map((eachProduct, i) => {
                     //console.log(eachProduct)
 
@@ -62,20 +62,22 @@ class Cart extends Component {
                             <div className='item-group'>
                                 <button className='remove-item' onClick={() => this.deleteFromCart(eachProduct.product_id)}>x</button>
                             </div>
+                            <div className='div-image'>
                                 <img className='mapped-img' src={eachProduct.img_url} alt="" />
+                            </div>
                             <div className='price'>
                                 <h6 className='mapped-price' >${eachProduct.price}</h6>
-                                <div className='qty'>
-                                    <input className='input-box' onChange={(e) => this.changeQuantity(eachProduct.product_id, e.target.value)} type="box" />
-                                    <h6 className='mapped-quantity' >Qty. {eachProduct.quantity}</h6>
-                                </div>
-                                <h4 className='sub-total' >${eachProduct.price * eachProduct.quantity}</h4>
                             </div>
+                            <div className='qty'>
+                                <input className='input-box' onChange={(e) => this.changeQuantity(eachProduct.product_id, e.target.value)} type="box" />
+                                <h6 className='mapped-quantity' >Qty. {eachProduct.quantity}</h6>
+                            </div>
+                            <h4 className='sub-total' >${eachProduct.price * eachProduct.quantity}</h4>
                         </div>
                     )
                 }) : 'You currently have no items in your cart.'}
                 <div>
-                    <hr className='hr-cart'/>
+                    <hr className='hr-cart' />
                     <h3 className='total-price'>Total: ${total}</h3>
                     <Payment />
                 </div>

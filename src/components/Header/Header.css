@@ -26,10 +26,11 @@
   .header_cart_button {
     margin-top: 50px;
     font-family: 'Prata', serif;
-    font-size: 15px;
+    font-size: 10px;
     color: #97a4c4;
     z-index: 10;
     display: block;
+    text-transform: uppercase;
   }
 
   .header_title {
