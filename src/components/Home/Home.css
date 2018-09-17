@@ -74,6 +74,7 @@ hr.style-one {
     justify-content: space-around;
     align-items: center;
     color: #3d4450;
+    /* text-shadow: 2px 2px #3d4450; */
     font-weight: 200px;
 }
 
@@ -93,8 +94,8 @@ hr.style-one {
     font-style: normal;
     font-size: 35px;
     text-transform: uppercase;
-    color:  #bbc0e2;
-    text-shadow: 2px 2px #3d4450;
+    color:  #3d4450;
+    /* text-shadow: 2px 2px #3d4450; */
     padding-bottom: 20px;
 }
 

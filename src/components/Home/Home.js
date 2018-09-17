@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Parallax, Background } from 'react-parallax';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import Willow from '../../photos/transparent_flowers.png'
 import Crest from '../../photos/transparent-crest.png';
 import './Home.css';
@@ -39,7 +40,7 @@ export default class Home extends Component {
                         <h1>Willow Waters Original watercolors - beautifully simple and magically colorful
                         </h1>
                         <hr className='style-one' />
-                            <img className='floral_break_img' src={Willow} alt="" />
+                        <img className='floral_break_img' src={Willow} alt="" />
                         <hr className='style-one' />
                         <h1>
                             Curate the lifestyle you want with Willow Waters' botanical illustrations and beautiful watercolors
@@ -49,9 +50,7 @@ export default class Home extends Component {
                         <img src='' alt="fill murray" />
                     </Background>
                 </Parallax>
-                {/* <div className="hero-text2">
-
-                </div> */}
+            
                 <Parallax
                     bgImage={require('../../photos/tree-tunnel.jpg')}
                     bgHeight={'900px'}
@@ -118,4 +117,6 @@ export default class Home extends Component {
             </div>
         );
     }
+    //Eric was here
 }
+

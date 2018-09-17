@@ -18,6 +18,7 @@ class Checkout extends Component {
                     })
                 console.log(res)
             })
+            axios.post('/api/email')
     }
 
 
@@ -35,7 +36,7 @@ class Checkout extends Component {
                 billingAddress={true}
                 shippingAddress={true}
             >
-            <div>
+            <div className=''>
                 <button className='stripe-checkout'>Checkout</button>
             </div>
             </StripeCheckout>

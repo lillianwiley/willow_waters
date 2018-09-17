@@ -40,15 +40,15 @@ module.exports = {
 
     getCart: async (req, res) => {
         const db = req.app.get('db')
-        const {id} = req.session.user
+        const { id } = req.session.user
         let cart = await db.get_cart([id])
         res.status(200).send(cart)
     },
 
     deleteCart: async function (req, res) {
         const db = req.app.get('db')
-        const {id} = req.session.user
-        const {product_id} = req.params
+        const { id } = req.session.user
+        const { product_id } = req.params
         await db.delete_item_in_cart([id, product_id])
         let cart = await db.get_cart([id])
         res.status(200).send(cart)
@@ -56,9 +56,9 @@ module.exports = {
 
     changeCartQuantity: async function (req, res) {
         const db = req.app.get('db')
-        const {id} = req.session.user
-        const {quantity, product_id} = req.params
-        console.log(quantity,product_id)
+        const { id } = req.session.user
+        const { quantity, product_id } = req.params
+        console.log(quantity, product_id)
         await db.update_quantity([quantity, product_id, id])
         let cart = await db.get_cart([id])
         res.status(200).send(cart)
@@ -66,21 +66,25 @@ module.exports = {
 
     deleteUserCart: async function (req, res) {
         const db = req.app.get('db')
-        const {id} = req.session.user
+        const { id } = req.session.user
         console.log(id)
         await db.delete_user_cart([id])
         let cart = await db.get_cart([id])
         res.status(200).send(cart)
-        
+
     },
 
     getCartQuantity: (req, res) => {
         const db = req.app.get('db')
-        const {id} = req.session.user
-        db.get_all_cart_quantity([id])
-        .then(quantity => {
-            res.status(200).send(quantity)
-        })
+        if (req.session.user) {
+            const { id } = req.session.user
+            db.get_all_cart_quantity([id])
+                .then(quantity => {
+                    res.status(200).send(quantity)
+                })
+        } else{
+            res.status(404)
+        }
     }
 
 

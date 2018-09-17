@@ -10,6 +10,8 @@ const express = require('express')
     
 const app = express();
 
+const email_controller = require('./nodemailer');
+
 
 /* if someone asks for soemthing from our server it says look in build folder for a file of that name and if exists give it to them */
 
@@ -155,6 +157,7 @@ app.get('/api/cart', envCheck, controller.getCart);
 app.get('/api/getcartquantity', controller.getCartQuantity);
 
 app.post('/api/products/:product_id', envCheck, controller.addToCart);
+app.post('/api/email', email_controller.sendConfirmationEmail);
 
 app.put('/api/cart/:product_id/:quantity', envCheck, controller.changeCartQuantity);
 
