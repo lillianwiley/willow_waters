@@ -35,7 +35,9 @@ class Checkout extends Component {
                 billingAddress={true}
                 shippingAddress={true}
             >
-            <button className='stripe-checkout'>Checkout</button>
+            <div>
+                <button className='stripe-checkout'>Checkout</button>
+            </div>
             </StripeCheckout>
         );
     }

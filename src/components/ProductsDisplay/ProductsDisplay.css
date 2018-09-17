@@ -19,7 +19,6 @@
 
 .map-title{
     padding-top: 15px;
-    margin: 0 auto;
     font-size: 18px;
     color: #8c91b1;
     font-family: sans-serif;
@@ -28,7 +27,7 @@
     line-height: 1.8em;
     letter-spacing: .06em;
     text-transform: uppercase;
-    /* color: #464246 */
+    text-align: center;
 }
 
 hr.style-eight {
@@ -67,6 +66,7 @@ hr.style-eight:after {
     line-height: 1.8em;
     letter-spacing: .06em;
     text-align: center;
+    flex-wrap: wrap;
 }
 
 .map-button{

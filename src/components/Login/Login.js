@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {updateUser} from '../../ducks/reducer';
+import axios from 'axios';
 import './Login.css';
 
 class Login extends Component {
@@ -8,6 +10,12 @@ class Login extends Component {
 
         this.handleLoginLogout = this.handleLoginLogout.bind(this)
     }
+
+    async componentDidMount(){
+        let userData = await axios.get('/api/user-data');
+        this.props.updateUser(userData.data)
+    }
+
     login() {
         const { REACT_APP_DOMAIN, REACT_APP_CLIENT_ID } = process.env;
         let url = `${encodeURIComponent(window.location.origin)}/auth/callback`
@@ -40,4 +48,4 @@ function mapStateToProps(state) {
         user: state.user
     }
 }
-export default connect(mapStateToProps)(Login)
+export default connect(mapStateToProps, {updateUser} )(Login)

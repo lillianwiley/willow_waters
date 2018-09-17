@@ -52,7 +52,8 @@ class Cart extends Component {
         return (
             <div className='cart_container'>
                 <h2 className='cart-header'>SHOPPING CART</h2>
-                <p className='span-list'>ITEM</p> <p className='span-list2'><span> PRICE </span> QTY. <span>SUB TOTAL</span></p>
+                {/* <p className='span-list'>ITEM</p>  */}
+                <p className='span-list2'><span className='item-span'>ITEM</span><span className='price-span'> PRICE </span><span className='qty-span'>QTY.</span><span className='total-span'>SUB TOTAL</span></p>
                 <hr className='hr-cart' />
                 {this.props.cart[0] ? this.props.cart.map((eachProduct, i) => {
                     //console.log(eachProduct)
