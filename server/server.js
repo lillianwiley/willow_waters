@@ -66,8 +66,10 @@ app.get('/auth/callback', async (req, res) => {
 
     
     let resWithToken = await axios.post(`https://${REACT_APP_DOMAIN}/oauth/token`, payload)
+    console.log(resWithToken)
     
     let resWithUserData = await axios.get(`https://${REACT_APP_DOMAIN}/userinfo?access_token=${resWithToken.data.access_token}`)
+    console.log(resWithUserData)
     
     let {
         email,
