@@ -8,6 +8,8 @@ import axios from 'axios';
 
 class Checkout extends Component {
 
+    //collect and tokenize the customer's payment information using Checkout. You then send the resulting token to your backend.
+
     onToken = (token) => {
         token.card = void 0
         axios.post('/api/payment', { token, amount: this.props.amount *100 })

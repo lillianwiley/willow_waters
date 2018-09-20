@@ -1,6 +1,7 @@
 require('dotenv').config();
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
-
+// use amount, token with id off of req.body to make a charge
+//you use the token in API request to create a charge.
 module.exports = {
     handlePayment: (req, res) => {
         const { amount, token:{id}} = req.body
